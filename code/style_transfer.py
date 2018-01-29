@@ -235,14 +235,24 @@ if __name__ == '__main__':
                 print('--------------------epoch %d--------------------' % epoch)
                 print('learning_rate:', learning_rate, '  gamma:', gamma)
 
-                for batch in batches:
+                for batch_indx,batch in enumerate(batches):
+                    
+                    print('start batch :', batch_indx)
+                    
                     feed_dict = feed_dictionary(model, batch, rho, gamma,
                         dropout, learning_rate)
-
+                    
+                    print('dict was feeded')
+                    
                     loss_d0, _ = sess.run([model.loss_d0, model.optimizer_d0],
                         feed_dict=feed_dict)
+                    
+                    print('loss_d0 computed',loss_d0)
+                    
                     loss_d1, _ = sess.run([model.loss_d1, model.optimizer_d1],
                         feed_dict=feed_dict)
+                    
+                    print('loss_d1 computed',loss_d1)
 
                     # do not back-propagate from the discriminator
                     # when it is too poor
