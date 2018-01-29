@@ -1,3 +1,8 @@
+This repo is ported on python3 repo https://github.com/shentianxiao/language-style-transfer
+
+next is readme from language-style-transfer repo
+
+
 # Language Style Transfer
 This repo contains the code and data of the following paper:
 
@@ -36,6 +41,3 @@ The model and results will be saved in the <code>tmp/</code> folder.
 Check <code>code/options.py</code> for all running options.
 
 <br>
-
-## Dependencies
-Python >= 2.7, TensorFlow 1.3.0
