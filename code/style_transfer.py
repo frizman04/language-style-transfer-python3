@@ -236,14 +236,10 @@ if __name__ == '__main__':
                 print('learning_rate:', learning_rate, '  gamma:', gamma)
 
                 for batch_indx,batch in enumerate(batches):
-                    
-                    print('start batch :', batch_indx)
-                    
+                                      
                     feed_dict = feed_dictionary(model, batch, rho, gamma,
                         dropout, learning_rate)
-                    
-                    print('dict was feeded')
-                    
+                              
                     loss_d0, _ = sess.run([model.loss_d0, model.optimizer_d0],
                         feed_dict=feed_dict)
                     
